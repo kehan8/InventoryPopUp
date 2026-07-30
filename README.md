@@ -74,17 +74,13 @@ All of these are optional except the three animations.
 
 ## Two kinds of screens
 
-- **Opt-in** (`MODDED_SCREENS` in the file): screens that aren't vanilla
-  containers, so they're missed by default. Toggling one of these *on*
-  makes it count; it has no other effect.
-- **Opt-out** (`EXCLUDABLE_CONTAINER_SCREENS` in the file): screens that
-  *are* vanilla containers, so they already count via the general
-  container check. Toggling one of these *off* excludes just that screen -
-  every other container (chests, barrels, etc.) keeps working normally.
-
-If you're not sure which kind a screen is: open it with the debug block
-(see below) and check `isContainerOpen=`. `true` means opt-out, `false`
-means opt-in.
+- **Opt-in**: screens that aren't vanilla containers (like Cobblemon's PC
+  or Create's blocks) are off unless you turn them on with the matching
+  `enable*` option.
+- **Opt-out**: screens that already count automatically (like Waystones,
+  since it's a vanilla-style container) can be turned off individually
+  with the matching `enable*` option, without affecting other containers
+  like chests or barrels.
 
 ## `:getPhase()`
 
@@ -95,19 +91,8 @@ Returns one of:
 - `"looping"` - `loopAnim` is playing (screen is open)
 - `"ending"` - `endAnim` is playing
 
-## Adding more screens
-
-Open `InventoryPopUp.lua` and find the debug block (commented out, near the
-top). Uncomment it, open the screen in-game, and read the class name and
-`isContainerOpen=` value it prints in chat.
-
-- `isContainerOpen=false` -> add the class name to `MODDED_SCREENS`, with
-  your own key name and (if you want it toggleable) an `enable*` option.
-- `isContainerOpen=true` -> it already works automatically. Only add it to
-  `EXCLUDABLE_CONTAINER_SCREENS` if you specifically want the *option* to
-  turn it off later.
-
 ## Credits
 
-Made by Kehan. Questions or issues? Message me on Discord (@Kehan) with as
-much detail as possible - a screenshot or short clip helps a lot.
+Made by Kehan. Questions, issues, or need a screen supported that isn't
+yet? Message me on Discord (@Kehan) with as much detail as possible - a
+screenshot or short clip helps a lot.
