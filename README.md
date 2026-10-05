@@ -40,6 +40,20 @@ events.TICK:register(function()
 end)
 ```
 
+## Seeing it in first person (optional)
+
+By default, Minecraft doesn't render your own player model in first person,
+so you won't see the animation from your own point of view - only other
+players (or you, in third person / F5) will.
+
+If you also want to see it in first person, install the
+**First-person Model** mod:
+
+- [Modrinth](https://modrinth.com/mod/first-person-model)
+- [CurseForge](https://www.curseforge.com/minecraft/mc-mods/first-person-model)
+
+This is purely client-side and optional - InventoryPopUp works fine without it.
+
 ## Texture & making your own animations
 
 This repo also includes a ready-made texture, `MC_GUI_Inventory.png`,
